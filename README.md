@@ -13,7 +13,8 @@ A REST API exercise created with Node.js, Express, and MongoDB. For type safety 
 
 ### Configuration
 
-Add the following to `config/local.ts`, replacing the value of `mongodb.uri` with your MongoDB server URI. This file is ignored by Git.
+1. Create a `config/local.ts` file. This file is ignored by Git.
+2. Add the following to it, replacing the value of `mongodb.uri` with your MongoDB server URI.
 
 ```typescript
 export default {
@@ -43,7 +44,7 @@ Run the following commands to build a Docker image and run it on your local mach
 
 ```bash
 docker build . -t <image_name>
-docker run -p 49160:80 -d <image_name>
+docker run -p 49160:8080 -d <image_name>
 ```
 
 Endpoint: `localhost:49160/records` (POST)
