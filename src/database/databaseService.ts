@@ -1,4 +1,4 @@
-import { RecordsModel } from './records/recordsSchema';
+import { RecordsModel } from './records/recordsModel';
 import { Records } from './records/records';
 import { Aggregate } from 'mongoose';
 

@@ -1,5 +1,8 @@
 import { DatabaseService, IDatabaseService } from '../database/databaseService';
 import { Request, Response, NextFunction } from 'express';
+import Code from '../constants/code';
+import Message from '../constants/message';
+import { Records } from '../database/records/records';
 
 class RecordsController {
   databaseService: IDatabaseService;
@@ -12,24 +15,25 @@ class RecordsController {
     req: Request,
     res: Response,
     next: NextFunction
-  ): Promise<Response<any, Record<string, any>>> {
-    console.log('reached');
-    // TODO: type error handling
-    const startDate = new Date(req.body.startDate);
-    const endDate = new Date(req.body.endDate);
-    const minCount: number = req.body.minCount;
-    const maxCount: number = req.body.maxCount;
+  ): Promise<void | Response<any, Record<string, any>>> {
+    try {
+      throw Error('fdsfsdif');
+      // const records = await this.databaseService.findRecords(
+      //   new Date(req.body.startDate),
+      //   new Date(req.body.endDate),
+      //   req.body.minCount,
+      //   req.body.maxCount
+      // );
 
-    const records = await this.databaseService.findRecords(
-      startDate,
-      endDate,
-      minCount,
-      maxCount
-    );
+      const records: Records = [];
 
-    // TODO: use response model
-    return res.status(200).json({ records });
+      return res
+        .status(200)
+        .json({ code: Code.Success, msg: Message.Success, records });
+    } catch (error) {
+      next(error);
+    }
   }
 }
 
-export { RecordsController };
+export default RecordsController;
