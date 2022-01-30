@@ -1,6 +1,6 @@
 export default {
-  port: 8080,
+  port: 80, // Heroku exposes port 80
   mongodb: {
-    uri: process.env.MONGODB_URI,
-  },
+    uri: process.env.MONGODB_URI
+  }
 };

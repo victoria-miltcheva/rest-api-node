@@ -17,6 +17,7 @@ Add the following to `config/local.ts`, replacing the value of `mongodb.uri` wit
 
 ```typescript
 export default {
+  port: 8080,
   mongodb: {
     uri: 'INSERT_MONGODB_SERVER_URI'
   }
@@ -42,7 +43,7 @@ Run the following commands to build a Docker image and run it on your local mach
 
 ```bash
 docker build . -t <image_name>
-docker run -p 49160:8080 -d <image_name>
+docker run -p 49160:80 -d <image_name>
 ```
 
 Endpoint: `localhost:49160/records` (POST)
