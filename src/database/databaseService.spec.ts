@@ -1,6 +1,7 @@
 import { DatabaseService, IDatabaseService } from '../database/databaseService';
 
 // TODO: implement tests
+
 describe('Database service', () => {
   let databaseService: IDatabaseService;
 
@@ -15,11 +16,10 @@ describe('Database service', () => {
   describe('Records', () => {
     // TODO: Records mocks
 
-    // TODO: beforeEach
     beforeEach(async () => {});
 
-    it('can be retrieved correctly', () => {});
+    it('can be filtered correctly', () => {});
 
-    it('returns empty array of records if does not exist', () => {});
+    it('returns empty array of records if no matches found', () => {});
   });
 });

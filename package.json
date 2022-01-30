@@ -2,10 +2,10 @@
   "name": "rest-node-api",
   "version": "1.0.0",
   "description": "A simple REST API made using Node.js, TypeScript, Express, and MongoDB",
-  "main": "src/index.ts",
+  "main": "src/server.ts",
   "scripts": {
-    "start": "node dist/index.js",
-    "dev": "nodemon --config nodemon.json src/index.ts",
+    "start": "node dist/server.js",
+    "dev": "nodemon --config nodemon.json src/server.ts",
     "compile": "tsc",
     "lint": "npx eslint . --ext .ts",
     "lint:fix": "npx eslint . --ext .ts --fix",
