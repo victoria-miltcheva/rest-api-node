@@ -6,7 +6,7 @@ import { Response } from 'express';
 describe('Records middleware', () => {
   let req;
   let res: any;
-  let nextFn: () => {};
+  let nextFn: () => void;
 
   beforeEach(() => {
     req = getMockReq();
@@ -16,7 +16,14 @@ describe('Records middleware', () => {
 
   describe('Body validation', () => {
     it('does not return when the body exists', () => {
-      req = getMockReq({ body: {} });
+      req = getMockReq({
+        body: {
+          minCount: 1,
+          maxCount: 2,
+          startDate: '2022-01-01',
+          endDate: '2017-02-01'
+        }
+      });
 
       expect(RecordsMiddleware.validateBody(req, res, nextFn)).not.toReturn();
     });
