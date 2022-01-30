@@ -2,7 +2,6 @@ import { DatabaseService, IDatabaseService } from '../database/databaseService';
 import { Request, Response, NextFunction } from 'express';
 import Code from '../constants/code';
 import Message from '../constants/message';
-import { Records } from '../database/records/records';
 
 class RecordsController {
   databaseService: IDatabaseService;

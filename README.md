@@ -17,7 +17,6 @@ Add the following to `config/local.ts`, replacing the value of `mongodb.uri` wit
 
 ```typescript
 export default {
-  port: 8081,
   mongodb: {
     uri: 'INSERT_MONGODB_SERVER_URI'
   }
@@ -26,12 +25,27 @@ export default {
 
 ### Commands
 
-Run the following commands:
+#### Non-Docker:
+
+Run the following commands to install dependencies and set up the project:
 
 ```bash
 npm i               # Install dependencies
 npm run dev         # Start the project
 ```
+
+Endpoint: `localhost:8080/records` (POST)
+
+#### Docker:
+
+Run the following commands to build a Docker image and run it on your local machine:
+
+```bash
+docker build . -t <image_name>
+docker run -p 49160:8080 -d <image_name>
+```
+
+Endpoint: `localhost:49160/records` (POST)
 
 ## Project structure
 
@@ -43,9 +57,9 @@ npm run dev         # Start the project
     /constants                      # Non-environment-dependent constants
     /database                       # Database Access layer
         /records                    # Represents Records collection
-            records.ts              # Records representation
+            records.ts              # Data Transfer Object
             recordsModel.ts         # Records Mongoose model
-        databaseService.ts
+        databaseService.ts          # Data Access Object
     /fixtures                       # Mock objects used for testing
     /middleware                     # HTTP server middleware
     /routes                         # HTTP server routes

@@ -1,6 +1,6 @@
 import { RecordsModel } from './records/recordsModel';
-import { Records } from './records/records';
 import { Aggregate } from 'mongoose';
+import { Records } from '../constants/record';
 
 interface IDatabaseService {
   findRecords(
@@ -40,6 +40,14 @@ class DatabaseService implements IDatabaseService {
             $gt: minCount,
             $lt: maxCount
           }
+        }
+      },
+      {
+        $project: {
+          _id: false,
+          key: true,
+          createdAt: true,
+          totalCount: true
         }
       }
     ]);
