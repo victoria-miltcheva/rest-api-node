@@ -1,6 +1,6 @@
 # rest-node-api
 
-This a simple REST API exercise which uses Node.js, Express, and MongoDB. For type safety and maintainability, it has been written in TypeScript.
+A REST API exercise created with Node.js, Express, and MongoDB. For type safety and maintainability, it has been written in TypeScript.
 
 ## Running locally
 
@@ -12,6 +12,6 @@ This a simple REST API exercise which uses Node.js, Express, and MongoDB. For ty
 ### Commands
 
 ```bash
-npm i # 1. Install dependencies
-npm run dev # 2. Starts the project: 
+npm i               # Install dependencies
+npm run dev         # Start the project
 ```
