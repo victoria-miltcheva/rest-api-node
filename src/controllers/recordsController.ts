@@ -1,5 +1,5 @@
-import { DatabaseService, IDatabaseService } from "../database/databaseService";
-import { Request, Response, NextFunction } from "express";
+import { DatabaseService, IDatabaseService } from '../database/databaseService';
+import { Request, Response, NextFunction } from 'express';
 
 class RecordsController {
   databaseService: IDatabaseService;
@@ -13,7 +13,7 @@ class RecordsController {
     res: Response,
     next: NextFunction
   ): Promise<Response<any, Record<string, any>>> {
-    console.log('reached')
+    console.log('reached');
     // TODO: type error handling
     const startDate = new Date(req.body.startDate);
     const endDate = new Date(req.body.endDate);

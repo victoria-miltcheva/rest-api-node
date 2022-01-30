@@ -1,6 +1,6 @@
-import { RecordsModel } from "./records/recordsSchema";
-import { Records } from "./records/records";
-import { Aggregate } from "mongoose";
+import { RecordsModel } from './records/recordsSchema';
+import { Records } from './records/records';
+import { Aggregate } from 'mongoose';
 
 interface IDatabaseService {
   findRecords(
@@ -23,25 +23,25 @@ class DatabaseService implements IDatabaseService {
         $match: {
           createdAt: {
             $gt: startDate,
-            $lt: endDate,
-          },
-        },
+            $lt: endDate
+          }
+        }
       },
       {
         $addFields: {
           totalCount: {
-            $sum: "$counts",
-          },
-        },
+            $sum: '$counts'
+          }
+        }
       },
       {
         $match: {
           totalCount: {
             $gt: minCount,
-            $lt: maxCount,
-          },
-        },
-      },
+            $lt: maxCount
+          }
+        }
+      }
     ]);
 
     return records;

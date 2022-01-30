@@ -1,6 +1,6 @@
-import express, { Router, RouterOptions } from "express";
-import { RecordsController } from "../controllers/recordsController";
-import { DatabaseService } from "../database/databaseService";
+import express, { Router, RouterOptions } from 'express';
+import { RecordsController } from '../controllers/recordsController';
+import { DatabaseService } from '../database/databaseService';
 
 class RecordsRouter {
   router: Router;
@@ -13,7 +13,10 @@ class RecordsRouter {
   }
 
   private configure(): void {
-    this.router.post("/records", this.controller.findRecords.bind(this.controller));
+    this.router.post(
+      '/records',
+      this.controller.findRecords.bind(this.controller)
+    );
   }
 }
 

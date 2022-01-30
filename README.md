@@ -7,7 +7,9 @@ A REST API exercise created with Node.js, Express, and MongoDB. For type safety 
 ### Pre-requisites
 
 - [Node.js](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment)
-- Not required, but recommended: an API client for testing, such as [Insomnia](https://insomnia.rest/)
+- Recommended: [ESLint VS Code plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- Recommended: [Prettier VS Code plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- Recommended: an API client for testing, such as [Insomnia](https://insomnia.rest/)
 
 ### Configuration
 
