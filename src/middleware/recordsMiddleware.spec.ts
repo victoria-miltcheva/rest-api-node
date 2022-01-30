@@ -1,15 +1,32 @@
 // TODO: implement tests
 import RecordsMiddleware from './recordsMiddleware';
+import { getMockReq, getMockRes } from '@jest-mock/express';
+import { Response } from 'express';
 
 describe('Records middleware', () => {
-  let mockBody;
+  let req;
+  let res: any;
+  let nextFn: () => {};
+
+  beforeEach(() => {
+    req = getMockReq();
+    res = getMockRes();
+    nextFn = jest.fn();
+  });
+
   describe('Body validation', () => {
-    it('validates that the body exists', () => {});
+    it('does not return when the body exists', () => {
+      req = getMockReq({ body: {} });
+
+      expect(RecordsMiddleware.validateBody(req, res, nextFn)).not.toReturn();
+    });
+
+    it('returns an error response when the body does not exist');
   });
 
   describe('validates date fields', () => {
     it('validates that the start date exists', () => {});
-    it('validates tthe start date format', () => {});
+    it('validates the start date format', () => {});
     it('validates that the end date exists', () => {});
     it('validates the end date format', () => {});
     it('validates the date range', () => {});
