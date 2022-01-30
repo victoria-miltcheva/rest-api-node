@@ -17,15 +17,12 @@ class RecordsController {
     next: NextFunction
   ): Promise<void | Response<any, Record<string, any>>> {
     try {
-      throw Error('fdsfsdif');
-      // const records = await this.databaseService.findRecords(
-      //   new Date(req.body.startDate),
-      //   new Date(req.body.endDate),
-      //   req.body.minCount,
-      //   req.body.maxCount
-      // );
-
-      const records: Records = [];
+      const records = await this.databaseService.findRecords(
+        new Date(req.body.startDate),
+        new Date(req.body.endDate),
+        req.body.minCount,
+        req.body.maxCount
+      );
 
       return res
         .status(200)

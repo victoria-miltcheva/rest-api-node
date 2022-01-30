@@ -2,7 +2,7 @@
 import RecordsMiddleware from './recordsMiddleware';
 
 describe('Records middleware', () => {
-  let mockBody: ReqBody;
+  let mockBody;
   describe('Body validation', () => {
     it('validates that the body exists', () => {});
   });

@@ -40,14 +40,12 @@ npm run dev         # Start the project
 /src                                # Contains the main code
     /controllers                    # Controller layer
         recordsController.ts
-        recordsController.spec.ts
     /constants                      # Non-environment-dependent constants
     /database                       # Database Access layer
         /records                    # Represents Records collection
             records.ts              # Records representation
             recordsModel.ts         # Records Mongoose model
         databaseService.ts
-        databaseService.spec.ts
     /fixtures                       # Mock objects used for testing
     /middleware                     # HTTP server middleware
     /routes                         # HTTP server routes
