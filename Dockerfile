@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-# If you are building your code for production
+# FIXME: Figure out how to fix the command so "RUN npm ci --only=production" can be run for production builds
 RUN npm i
 
 # Bundle app source
@@ -18,6 +18,6 @@ COPY . .
 # Transpile TypeScript files
 RUN npx tsc -p ./tsconfig.json
 
-EXPOSE 8080
+EXPOSE 80
 
 CMD [ "npm", "start" ]
