@@ -1,13 +1,13 @@
-import { DatabaseService } from "../database/databaseService";
-import { connect } from "mongoose";
-import config from "config";
+import { DatabaseService } from '../database/databaseService';
+import { connect } from 'mongoose';
+import config from 'config';
 
 type Services = {
   databaseService: DatabaseService;
 };
 
 async function connectToDatabase(): Promise<void> {
-  await connect(config.get("mongodb.uri"));
+  await connect(config.get('mongodb.uri'));
 }
 
 function initializeServices(): Services {
