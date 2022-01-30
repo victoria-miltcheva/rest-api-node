@@ -1,8 +1,8 @@
 import { Document, Model, model, Schema } from 'mongoose';
 
-import { Record } from './records';
+import RecordDto from './recordDto';
 
-interface RecordDocument extends Record, Document {}
+interface RecordDocument extends RecordDto, Document {}
 
 const schema = new Schema<RecordDocument>({
   key: Schema.Types.String,

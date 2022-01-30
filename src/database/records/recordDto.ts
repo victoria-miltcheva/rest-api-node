@@ -1,4 +1,4 @@
-interface Record {
+interface RecordDto {
   id?: any;
   key: string;
   value: string;
@@ -6,6 +6,4 @@ interface Record {
   counts: number[];
 }
 
-type Records = Record[];
-
-export { Record, Records };
+export default RecordDto;
