@@ -7,9 +7,24 @@ A REST API exercise created with Node.js, Express, and MongoDB. For type safety 
 ### Pre-requisites
 
 - [Node.js](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment)
-- Not necessary, but recommended: an API client for testing, such as [Insomnia](https://insomnia.rest/)
+- Not required, but recommended: an API client for testing, such as [Insomnia](https://insomnia.rest/)
+
+### Configuration
+
+Add the following to `config/local.ts`, replacing the value of `mongodb.uri` with your MongoDB server URI. This file is ignored by Git.
+
+```typescript
+export default {
+  port: 8081,
+  mongodb: {
+    uri: "INSERT_MONGODB_SERVER_URI",
+  },
+};
+```
 
 ### Commands
+
+Run the following commands:
 
 ```bash
 npm i               # Install dependencies
