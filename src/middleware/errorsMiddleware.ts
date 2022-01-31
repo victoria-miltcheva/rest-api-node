@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction, Application } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import Code from '../constants/code';
 import Message from '../constants/message';
 
@@ -8,7 +8,7 @@ class ErrorsMiddleware {
     next(err);
   }
 
-  notFoundErrorHandler(req: Request, res: Response, next: NextFunction) {
+  notFoundErrorHandler(req: Request, res: Response) {
     return res.status(404).json({
       code: Code.Failure,
       msg: Message.NotFoundError

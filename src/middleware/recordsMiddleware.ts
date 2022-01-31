@@ -46,24 +46,24 @@ class RecordsMiddleware {
     next();
   }
 
-  private validateBodyExists(
+  validateBodyExists(
     req: Request,
     res: Response
   ): Response<any, Record<string, any>> | void {
-    if (!req.body) {
+    if (!req.body || Object.keys(req.body).length === 0) {
       return res
         .status(400)
         .send({ code: Code.Failure, msg: Message.ValidationErrorMissingBody });
     }
   }
 
-  private validateKeyExists(
+  validateKeyExists(
     key: string,
     msg: Message,
     req: Request,
     res: Response
   ): Response<any, Record<string, any>> | void {
-    if (req.body[key] && req.body[key] === undefined) {
+    if (!req.body[key] || (req.body[key] && req.body[key] === undefined)) {
       return res.status(400).send({
         code: Code.Failure,
         msg
@@ -71,7 +71,7 @@ class RecordsMiddleware {
     }
   }
 
-  private validateStartBeforeEndDate(
+  validateStartBeforeEndDate(
     startDateKey: string,
     endDateKey: string,
     req: Request,
@@ -88,7 +88,7 @@ class RecordsMiddleware {
     }
   }
 
-  private validateMinBeforeMaxCount(
+  validateMinBeforeMaxCount(
     minCountKey: string,
     maxCountKey: string,
     req: Request,
@@ -105,7 +105,7 @@ class RecordsMiddleware {
     }
   }
 
-  private validateDate(
+  validateDate(
     key: string,
     missingKeyMessage: Message,
     wrongFormatMessage: Message,
@@ -124,7 +124,7 @@ class RecordsMiddleware {
     }
   }
 
-  private validateCount(
+  validateCount(
     key: string,
     missingKeyMessage: Message,
     wrongFormatMessage: Message,

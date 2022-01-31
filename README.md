@@ -53,19 +53,14 @@ Endpoint: `localhost:49160/records` (POST)
 ## Project structure
 
 ```bash
-/config                             # Application secrets and environment-dependent           configurations go here
-/src                                # Contains the main code
+/config                             # Application secrets and environments
+/src                                # Contains the code
     /controllers                    # Controller layer
-        recordsController.ts
     /constants                      # Non-environment-dependent constants
     /database                       # Database Access layer
         /records                    # Represents Records collection
-            records.ts              # Data Transfer Object
-            recordsModel.ts         # Records Mongoose model
-        databaseService.ts          # Data Access Object
-    /fixtures                       # Mock objects used for testing
     /middleware                     # HTTP server middleware
     /routes                         # HTTP server routes
     /utilities                      # Utility functions
-    server.ts                       # Entrypoint
+    server.ts                       # Entry point
 ```
