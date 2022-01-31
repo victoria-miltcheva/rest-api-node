@@ -1,5 +1,5 @@
 export default {
-  port: 8080,
+  port: process.env.PORT,
   mongodb: {
     uri: process.env.MONGODB_URI
   }

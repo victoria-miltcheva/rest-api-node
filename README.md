@@ -43,6 +43,7 @@ Endpoint: `localhost:8080/records` (POST)
 Run the following commands to build a Docker image and run it on your local machine:
 
 ```bash
+PORT=8080
 docker build . -t <image_name>
 docker run -p 49160:8080 -d <image_name>
 ```
