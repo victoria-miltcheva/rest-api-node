@@ -11,7 +11,7 @@
     "lint:fix": "npx eslint . --ext .ts --fix",
     "prettier:format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "pretest": "npm run lint",
-    "test": "npx jest --coverage"
+    "test": "npx jest --coverage src/"
   },
   "author": "Victoria Miltcheva",
   "license": "ISC",
