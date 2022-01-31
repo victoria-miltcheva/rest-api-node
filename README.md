@@ -7,6 +7,7 @@ A REST API exercise created with Node.js, Express, and MongoDB. For type safety 
 ### Pre-requisites
 
 - [Node.js](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment)
+- Optional: A containerization platform such as [Docker](https://www.docker.com/) or [Podman](https://podman.io/), if opting to build container.
 - Recommended: [ESLint VS Code plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - Recommended: [Prettier VS Code plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - Recommended: an API client for testing, such as [Insomnia](https://insomnia.rest/)
