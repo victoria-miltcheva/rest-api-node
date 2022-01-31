@@ -18,6 +18,6 @@ COPY . .
 # Transpile TypeScript files
 RUN npx tsc -p ./tsconfig.json
 
-EXPOSE 8080
+EXPOSE $PORT
 
 CMD [ "npm", "start" ]
