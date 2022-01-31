@@ -25,10 +25,12 @@ class ErrorsMiddleware {
       return next(err);
     }
 
-    return res.status(500).json({
+    res.status(500).json({
       code: Code.Failure,
       msg: Message.InternalError
     });
+
+    res.end();
   }
 }
 

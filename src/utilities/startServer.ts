@@ -14,7 +14,12 @@ async function startServer(): Promise<Application> {
   server.use(express.json());
 
   // Connect to DB
-  await connect(config.get('mongodb.uri'));
+  await connect(config.get('mongodb.uri'), (err) => {
+    if (err) {
+      console.error('Failed to connect to database');
+      throw err;
+    }
+  });
 
   // Services initialization
   const { databaseService } = initializeServices();
