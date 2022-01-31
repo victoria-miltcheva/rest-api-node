@@ -4,7 +4,7 @@ import Code from '../constants/code';
 import Message from '../constants/message';
 
 class RecordsController {
-  databaseService: IDatabaseService;
+  private databaseService: IDatabaseService;
 
   constructor(databaseService: DatabaseService) {
     this.databaseService = databaseService;
