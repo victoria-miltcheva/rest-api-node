@@ -29,11 +29,11 @@ export default {
 
 #### Non-Docker:
 
-Run the following commands to install dependencies and set up the project:
+Run the following commands to install dependencies and start the server:
 
 ```bash
 npm i               # Install dependencies
-npm run dev         # Start the project
+npm run dev         # Start the server
 ```
 
 Endpoint: `localhost:8080/records` (POST)
